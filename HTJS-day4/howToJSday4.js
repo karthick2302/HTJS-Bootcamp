@@ -2,13 +2,13 @@ let api = 'http://www.omdbapi.com/?apikey=61e576a4&t='
 let imdb1 = 'https://www.imdb.com/find/?q='
 let imdb2 = '&ref_=nv_sr_sm'
 
-
+searchMovie()
 function searchMovie() {
 	let query = document.getElementById('movieName').value;
 	let search = api + query;
-	fetch(search).then(function(data) {
+	fetch(search).then(data => {
 		return data.json()
-	}).then(function(data) {
+	}).then(data => {
 		document.getElementById('title').innerText = data.Title;
 		document.getElementById('desc').innerText = data.Plot;
 		document.getElementById('genre').innerText = data.Genre;
@@ -19,6 +19,6 @@ function searchMovie() {
 		document.getElementById('ratings').innerText = data.imdbRating;
 		document.getElementById('writers').innerText = data.Writer;
 		document.getElementById('poster').src = data.Poster;
-		document.getElementById('google').href = imdb1+query+imdb2;
+		document.getElementById('imdb').href = imdb1+query+imdb2;
 	})
 }

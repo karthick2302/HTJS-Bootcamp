@@ -20,6 +20,5 @@ function searchMovie() {
 		document.getElementById('writers').innerText = data.Writer;
 		document.getElementById('poster').src = data.Poster;
 		document.getElementById('google').href = imdb1+query+imdb2;
-		console.log(google1+data.Title+google2)
 	})
 }
